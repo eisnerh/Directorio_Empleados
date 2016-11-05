@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Muestra la lista creada en XML Anteriormente /EmployeeDirectory/src/assets/employees.xml -->
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		title="Direct Reports">
+	
+	<s:Label text="{data.firstName} {data.lastName}'s Reports:" top="12" left="12"/>
+	<!-- Hace un pushView para mostrar /EmployeeDirectory/src/assets/employees.xml -->
+	<s:List id="list" top="48" bottom="0" left="0" right="0" 
+			dataProvider="{data.directReports}"
+			
+			change="navigator.pushView(EmployeeDetails, list.selectedItem)">
+		<s:itemRenderer>
+			<fx:Component>
+				<!-- Renderiza las imagenes -->
+				<s:IconItemRenderer 
+					label="{data.firstName} {data.lastName}"
+					messageField="title"/>
+			</fx:Component>
+		</s:itemRenderer>
+	</s:List>
+	
+</s:View>
+
