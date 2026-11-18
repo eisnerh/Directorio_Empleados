@@ -1,0 +1,55 @@
+{
+  "originalSource": "src/assets/employees.xml",
+  "records": 12,
+  "photos": [
+    {
+      "name": "amy_jones.jpg",
+      "sha256": "c9150ad7042133f33f2533b54051b5b4ef619c2204381a5e4fab8986bd9387c1"
+    },
+    {
+      "name": "eugene_lee.jpg",
+      "sha256": "a45bc049a37b5a5303c2bc2d08015496f980810f15339461ca1f96fc699d08ec"
+    },
+    {
+      "name": "gary_donovan.jpg",
+      "sha256": "db320a7b025ab666634524c7219aa6808f6c0f8a92f161830ee2952cd8950200"
+    },
+    {
+      "name": "james_king.jpg",
+      "sha256": "830a473cebc0fb5c59b245d05ecc3c06c79721df071b119e39dcbe22b62481a1"
+    },
+    {
+      "name": "john_williams.jpg",
+      "sha256": "a0dbc382d19adba4ef4d629de928e560a61286e9a4baeaa22ed4e2fd6a46424a"
+    },
+    {
+      "name": "julie_taylor.jpg",
+      "sha256": "e73934dd59f2fff12dfa1feec037429a0bf2d9bb0f87f964770001b047b6c068"
+    },
+    {
+      "name": "kathleen_byrne.jpg",
+      "sha256": "d1c237924b6bebcc5c6e04bf61278261a5765b192031016dfc191b453f7d6682"
+    },
+    {
+      "name": "lisa_wong.jpg",
+      "sha256": "051e19d1c5ad4076c689b54ac007936e9e13583bf3486e9295a4c0b8758b43d8"
+    },
+    {
+      "name": "paul_jones.jpg",
+      "sha256": "8e5ee83963c8ba910870dbf0d0ef4fee2974ad39465944f52e78bb07f4c5b01c"
+    },
+    {
+      "name": "paula_gates.jpg",
+      "sha256": "0490aca10bcf5cb3f3779db63693090a0998cb80f75e1fc9af4a31126df59773"
+    },
+    {
+      "name": "ray_moore.jpg",
+      "sha256": "bc8fd7898cc1e62c47304b37df684b73d9e008feb2ef6931bc3abac51f8c460b"
+    },
+    {
+      "name": "steven_wells.jpg",
+      "sha256": "c9fa341e999f629caee0f36a78bade1d815f3fcb1eba38f86ec21423acca9c27"
+    }
+  ],
+  "originalNormalizedSha256": "e43086b7f6632744e28ab48e9fb4636970b75e5843a8a6a97c2bcd2160df2636"
+}

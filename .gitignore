@@ -32,3 +32,8 @@ local.settings.json
 id_rsa
 id_ed25519
 # local-development:end
+# Versión web: dependencias, salida y evidencia local
+/web/node_modules/
+/web/dist/
+/web/test-results/
+/web/playwright-report/

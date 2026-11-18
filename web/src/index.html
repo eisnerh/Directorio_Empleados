@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17463e">
+  <title>Directorio de empleados</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#directory-heading">Saltar al directorio</a>
+  <header class="topbar">
+    <a class="brand" href="#directory"><span class="brand-mark" aria-hidden="true">e</span><span>Equipo<span class="brand-caption">Directorio de empleados</span></span></a>
+    <div class="toolbar">
+      <span class="local-tag"><span aria-hidden="true">●</span> <span id="storage-status">Datos locales</span></span>
+      <button id="export" class="secondary" type="button" disabled>Exportar respaldo</button>
+      <button id="import" class="secondary" type="button" disabled>Importar respaldo</button>
+      <input id="backup-file" class="visually-hidden" type="file" accept="application/json,.json" aria-label="Archivo de respaldo">
+    </div>
+  </header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">PERSONAS Y EQUIPOS</p><h1 id="directory-heading" tabindex="-1">Directorio de empleados</h1><p class="subtitle">Encuentra contactos y consulta quién forma parte de cada equipo.</p></div><a id="add" class="button" href="#new" aria-disabled="true">＋ Nuevo empleado</a></div>
+    <div id="notice" class="notice" role="status" aria-live="polite" tabindex="-1" hidden></div>
+    <div id="external-change" class="notice" role="status" hidden>Hay cambios guardados en otra pestaña. <button id="reload" class="link-button" type="button">Cargar cambios</button></div>
+    <div id="fatal" class="notice error" role="alert" hidden><p id="fatal-message"></p><button id="retry" type="button">Reintentar</button></div>
+    <div class="workspace">
+      <section id="list-panel" class="list-panel" aria-label="Lista de empleados">
+        <div class="filters"><label for="search">Buscar personas</label><input id="search" type="search" placeholder="Nombre, cargo, ciudad…" autocomplete="off" disabled><label for="department">Departamento</label><select id="department" disabled><option value="">Todos los departamentos</option></select></div>
+        <div class="list-summary"><h2>Personas</h2><span id="count" role="status" aria-live="polite">Cargando…</span></div>
+        <div id="employee-list" class="employee-list" aria-busy="true"></div>
+      </section>
+      <section id="detail-panel" class="detail-panel" aria-label="Ficha del empleado"><div class="placeholder"><span class="placeholder-icon" aria-hidden="true">↗</span><h2>Tu equipo, a un clic</h2><p>Selecciona una persona para consultar sus datos de contacto y relaciones de equipo.</p></div></section>
+    </div>
+    <footer><p>Los datos se guardan en este navegador. Exporta un respaldo para conservarlos o llevarlos a otro equipo.</p><span>Versión web del ejercicio Employee Directory</span></footer>
+  </main>
+  <template id="form-template">
+    <a class="back-link" href="#directory">← Volver al directorio</a>
+    <div class="detail-heading"><p class="eyebrow">DIRECTORIO</p><h2 id="form-heading" tabindex="-1"></h2><p class="hint">Nombre y apellidos son obligatorios.</p></div>
+    <form id="employee-form">
+      <p id="form-error" class="notice error" role="alert" tabindex="-1" hidden></p>
+      <fieldset><legend class="visually-hidden">Datos del empleado</legend>
+        <div class="form-grid">
+          <div><label for="firstName">Nombre <span aria-hidden="true">*</span></label><input id="firstName" name="firstName" maxlength="100" required autocomplete="given-name"></div>
+          <div><label for="lastName">Apellidos <span aria-hidden="true">*</span></label><input id="lastName" name="lastName" maxlength="100" required autocomplete="family-name"></div>
+          <div><label for="title">Cargo</label><input id="title" name="title" maxlength="120" autocomplete="organization-title"></div>
+          <div><label for="employee-department">Departamento</label><input id="employee-department" name="department" maxlength="100" autocomplete="organization"></div>
+          <div><label for="city">Ciudad</label><input id="city" name="city" maxlength="120" autocomplete="address-level2"></div>
+          <div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" maxlength="254" autocomplete="email"></div>
+          <div><label for="officePhone">Teléfono de oficina</label><input id="officePhone" name="officePhone" type="tel" maxlength="40" autocomplete="work tel"></div>
+          <div><label for="cellPhone">Teléfono móvil</label><input id="cellPhone" name="cellPhone" type="tel" maxlength="40" autocomplete="mobile tel"></div>
+          <div class="full-width"><label for="managerId">Jefatura</label><select id="managerId" name="managerId"><option value="">Sin jefatura</option></select></div>
+        </div>
+        <div class="form-actions"><button id="save" type="submit">Guardar empleado</button><a id="cancel-form" class="secondary button" href="#directory">Cancelar</a><span id="unsaved" class="hint" role="status" hidden>Cambios sin guardar</span></div>
+      </fieldset>
+    </form>
+  </template>
+</body>
+</html>
